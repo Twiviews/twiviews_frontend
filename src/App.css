@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+.parentPanel {
+  height:530px;
+  width: 20%;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  overflow-y: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.parentTweets {
+  height:530px;
+  width: 55.2%;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  /*overflow-y: auto; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.parentSearch {
+  height:530px;
+  width: 24.8%;
+  border: 1px solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  /*overflow-y: auto;*/
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.parentPanels{
+  display:flex;
+  flex-direction: row;
 }
 
-.App-link {
-  color: #61dafb;
+.simplebar-track.simplebar-horizontal {
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.simplebar-content {
+ overflow-x: hidden;
 }
+
+
+/* total width */
+.parentPanel::-webkit-scrollbar,.parentTweets::-webkit-scrollbar,.parentSearch::-webkit-scrollbar {
+  background-color:#fff;
+  width:16px
+}
+
+/* background of the scrollbar except button or resizer */
+.parentPanel::-webkit-scrollbar-track,.parentTweets::-webkit-scrollbar-track ,.parentSearch::-webkit-scrollbar-track{
+  background-color:#fff
+}
+
+/* scrollbar itself */
+.parentPanel::-webkit-scrollbar-thumb ,.parentTweets::-webkit-scrollbar-thumb,.parentSearch::-webkit-scrollbar-thumb{
+  background-color:#babac0;
+  border-radius:16px;
+  border:4px solid #fff
+}
+
+/* set button(top and bottom of the scrollbar) */
+.parentPanel::-webkit-scrollbar-button,.parentTweets::-webkit-scrollbar-button,.parentSearch::-webkit-scrollbar-button {display:none}
+
+

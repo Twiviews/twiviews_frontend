@@ -1,0 +1,25 @@
+.search-menu-container {
+    height:50%;
+}
+
+.search-field {
+    width: 60%;
+    margin: 10%;
+    margin-top: 10%;
+    margin-left:4%;
+}
+
+
+.search-button{
+    margin:10%;
+    width:30%;
+    height: 15%;
+    margin-left:36%;
+    margin-top: -23%;
+    margin-left: 66%;
+    
+}
+
+.search-header {
+    margin:10%;
+}
