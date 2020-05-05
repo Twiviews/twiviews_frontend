@@ -7,35 +7,16 @@ import 'simplebar/dist/simplebar.css';
 import  WritePost from './WritePost';
 import './TweetsSection.css';
 import axios from 'axios';
-import { SearchTermContext } from '../contexts/SearchTermContext';
+import { SearchTermContext } from '../contexts/SearchContext/SearchTermContext';
 
 
 const TweetsSection = () => {
-    const {searchTerm} = useContext(SearchTermContext)
-    const {isSearchTermClicked} = useContext(SearchTermContext);
-    console.log(isSearchTermClicked);
-    const initialState = [];
-    const [loading, setLoading ] = useState(true);
-    const [tweets, setTweets] = useState([]);
-    const [error, setError] = useState('');
-    let tweetsMapping;
+    const SearchContext = useContext(SearchTermContext);
+    const {loading, tweets} = SearchContext;
 
-    useEffect(() => {
-        console.log(searchTerm);
-        axios
-            .get("https://xxeqim55zf.execute-api.us-east-1.amazonaws.com/dev/reviews/"+searchTerm.searchInput.searchInput)
-            .then(res => {
-                setTweets(res.data.message);
-                setError('');
-            })
-            .catch(err => {
-                setError('Something went wrong !!!');
-                setTweets([]);
-            })
-    }, [isSearchTermClicked]);
 
     return (
-        <Card className="tweets-section-parent">
+        <Card className="tweets-section-parent" data-simplebar-auto-hide>
                 {
                     tweets.length > 0 && tweets.map(item => { 
                         return (
@@ -46,8 +27,9 @@ const TweetsSection = () => {
                     })
                 }
         </Card>
-    )
+     )
 }
+
 
 
 export default TweetsSection;

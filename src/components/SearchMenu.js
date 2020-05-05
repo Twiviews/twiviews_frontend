@@ -6,22 +6,22 @@ import 'simplebar';
 import 'simplebar/dist/simplebar.css';
 import './SearchMenu.css';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-import { SearchTermContext } from '../contexts/SearchTermContext';
+import { SearchTermContext } from '../contexts/SearchContext/SearchTermContext';
 
 
 const SearchMenu = () => {
-    const initialState = {
-       searchInput:''   
-    }
-    const  { addSearch } = useContext(SearchTermContext);
-    const { addSearchTermClicked } = useContext(SearchTermContext);
-    const  [searchTerm, setSearchTerm] = useState(initialState);
-
+    const SearchContext = useContext(SearchTermContext);
+    const [text, setText] = useState('');
+  
     const handleSubmit = (e) => {
         e.preventDefault();
-        addSearch(searchTerm);
-        addSearchTermClicked(true);
-        setSearchTerm({searchInput:''});
+        if (text === '') {
+            console.log("Please enter something");
+        } else {
+            SearchContext.searchTweets(text);
+            setText('');
+        }
+  
     }
     return (
         <Card   className = "search-menu-container" >
@@ -29,8 +29,7 @@ const SearchMenu = () => {
                 <h4 className = "search-header">Search for a movie name</h4>
                 <Input className = "search-field" 
                 type="text" 
-                value = {searchTerm.searchInput}
-                onChange = {e => setSearchTerm({ ...searchTerm, searchInput:e.target.value })}
+                onChange = {e => setText(e.target.value)}
                 />
                 <Input className="search-button" value="Search" type="submit"/> 
                 </form>

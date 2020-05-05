@@ -7,18 +7,18 @@ import Tweets from './components/Tweets';
 import Search from './components/Search';
 import 'simplebar';
 import 'simplebar/src/simplebar.css';
-import SearchTermContextProvider from './contexts/SearchTermContext';
+import SearchState from './contexts/SearchContext/SearchState';
 
 
 
 function App() {
   return (
     <div className="App">
-    <SearchTermContextProvider>
+    <SearchState>
     <Navbar></Navbar>
       <div className="parentPanels">
-      <Panel data-simplebar-auto-hide-hover> </Panel>
-      <Tweets data-simplebar-auto-hide> </Tweets>
+      <Panel> </Panel>
+      <Tweets> </Tweets>
       <Search> </Search>
       </div>
     <footer className="page-footer font-small blue">
@@ -26,7 +26,7 @@ function App() {
         <a href="https://ratedb.com/"> rateDB.com</a>
       </div>
     </footer>
-    </SearchTermContextProvider>
+    </SearchState>
     </div>
   );
 }
