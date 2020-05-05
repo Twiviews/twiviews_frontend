@@ -13,11 +13,12 @@
 .search-button{
     margin:10%;
     width:30%;
-    height: 15%;
+    height: 22%;
     margin-left:36%;
-    margin-top: -23%;
+    margin-top: -22%;
     margin-left: 66%;
-    
+    color: white;
+    background: #6c757d;
 }
 
 .search-header {

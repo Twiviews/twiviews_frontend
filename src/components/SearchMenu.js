@@ -32,7 +32,7 @@ const SearchMenu = () => {
                 value = {searchTerm.searchInput}
                 onChange = {e => setSearchTerm({ ...searchTerm, searchInput:e.target.value })}
                 />
-                <Input className="search-button" type="submit"/>
+                <Input className="search-button" value="Search" type="submit"/> 
                 </form>
         </Card>
     )
