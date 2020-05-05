@@ -21,6 +21,17 @@
     background: #6c757d;
 }
 
+.search-button:active{
+    background:#6c757d;
+    color:white
+}
+
+.search-button:focus{
+    background:#6c757d;
+    color:white
+}
+
+
 .search-header {
     margin:10%;
 }
