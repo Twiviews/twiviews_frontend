@@ -1,11 +1,13 @@
 .tweets-section-parent {
-    height:65%;
+    height:330px;
     overflow-y: auto;
+    display: inline-block;
 }
 
 
 .tweets-indiv {
     border: 1px solid black;
+    height: 25%;
 }
 
 /* Scroll bar styling */
@@ -26,4 +28,13 @@
 .tweets-section-parent::-webkit-scrollbar-button,
 {
   display:none
+}
+
+.tweets-card {
+    height:45%;
+    width:90%;
+    display: inline-block;
+    margin-top:3%;
+    margin-left:5%;
+    padding:5%;
 }

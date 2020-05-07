@@ -20,9 +20,9 @@ const TweetsSection = () => {
                 {
                     tweets.length > 0 && tweets.map(item => { 
                         return (
-                            <div className="tweets-indiv" key={item.id}>
+                            <Card className="tweets-card"  key={item.id}>
                                 {item.twiview}
-                            </div>
+                            </Card>
                         )
                     })
                 }
